@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/splash.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="heading">
+        <div class="nav">
+            <h3>Introducing Whispert Chart</h3>
+        </div>
+        <div class="content">
+            <div class="background">
+                <div class="img">
+                <img src="{% static 'images/aii.jpeg' %}">
+                </div>
+            </div>
+            &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
+            <div class="text">
+                <h1> <img src="{% static 'images/open.png' %}">OpenAI</h1>
+                <br><br><br>
+                <h1>WhisperChart: Translating <br> Audio To Text</h1>
+                <p>
+                    Whisper is an automatic speech recognition (ASR) system trained on 680,000
+                     hours of multilingual and multitask supervised data collected from the web. 
+                     We show that the use of such a large and diverse dataset leads to improved 
+                     robustness to accents, background noise and technical language. 
+                     Moreover, it enables transcription in multiple languages, as well as translation 
+                     from those languages into English. We are open-sourcing models and inference 
+                     code to serve as a foundation for building useful applications and for further 
+                     research on robust speech processing.
+                </p>
+                <br>
+                <p>
+                    The Whisper architecture is a simple end-to-end approach, implemented as an 
+                    encoder-decoder Transformer. Input audio is split into 30-second chunks, converted 
+                    into a log-Mel spectrogram, and then passed into an encoder. A decoder is trained to 
+                    predict the corresponding text caption, intermixed with special tokens that direct 
+                    the single model to perform tasks such as language identification, phrase-level 
+                    timestamps, multilingual speech transcription, and to-English speech translation.
+                </p>
+                <br><br><br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'register' %}">Try WhisperChart <span>&#8599;</span></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

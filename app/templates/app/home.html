@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/room.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/admin1.css' %}"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <nav class="navbar background">
+            <ul class="nav-list">
+                <li><a href="#">WhisperChart</a></li>
+            </ul>
+            <div class="rightNav">
+                <a href="{% url 'logout' %}">|LogOut</a>
+            </div>
+        </nav>
+    </div>
+    <section class="scroller">
+        <div class="messages">
+            <div class='container darker'>
+                <p>{{ouput}}</p>
+            </div>
+            <div class="container1">
+                <form action="" id="post-form" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <!-- <div class="foorm"> -->
+                        {% for message in messages %}
+                        <p style="color: red;" >{{message}}</p>
+                        {% endfor %}
+                        <label for="">
+                            Music (.mp3 .wav .m4a)
+                        </label><br>
+                        {{form.music}}
+                        <button><i class="fa fa-send fa_custom fa-2x"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

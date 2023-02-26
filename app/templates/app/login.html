@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/admin.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div align="center">
+    <h2>Log In </h2>
+    {% for message in messages %}
+    <p style="color: red;" >{{message}}</p>
+    {% endfor %}
+</div>
+<div class="container">
+    <form id="post-form" method="POST">
+        {% csrf_token %}
+        <label>Username</label>
+        <input type="text" name="username" id="username" required />
+        <label for="">Password</label>
+        <input type="password" name="password" id="password" required>
+        <input type="submit" value="LogIn">
+        <br>
+        Dont have an account
+        <a href="{% url 'register' %}">Register</a>
+    </form>
+</div>
+</body>
+</html>
